@@ -73,8 +73,8 @@ class ERScrollPhysics extends BouncingScrollPhysics {
           actualTriggerOffset: headerNotifier.actualTriggerOffset,
           velocity: headerNotifier.velocity,
         );
-      } else if (headerNotifier.spring != null) {
-        return headerNotifier.spring!;
+      } else if (headerNotifier.spring1 != null) {
+        return headerNotifier.spring1!;
       }
     }
     if (footerNotifier.outOfRange) {
@@ -86,8 +86,8 @@ class ERScrollPhysics extends BouncingScrollPhysics {
           actualTriggerOffset: headerNotifier.actualTriggerOffset,
           velocity: headerNotifier.velocity,
         );
-      } else if (footerNotifier.spring != null) {
-        return footerNotifier.spring!;
+      } else if (footerNotifier.spring1 != null) {
+        return footerNotifier.spring1!;
       }
     }
     return _spring ?? super.spring;

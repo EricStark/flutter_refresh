@@ -78,7 +78,7 @@ abstract class IndicatorNotifier extends ChangeNotifier {
   double get secondaryVelocity => indicator.secondaryVelocity;
 
   /// Spring description.
-  SpringDescription? get _spring {
+  SpringDescription? get spring1 {
     if (_axis == Axis.horizontal) {
       return indicator.horizontalSpring ?? indicator.spring;
     } else {
@@ -97,7 +97,7 @@ abstract class IndicatorNotifier extends ChangeNotifier {
     }
   }
 
-  FrictionFactor? get frictionFactor {
+  FrictionFactor? get frictionFactor1 {
     if (_axis == Axis.horizontal) {
       return indicator.horizontalFrictionFactor ?? indicator.frictionFactor;
     } else {
@@ -105,7 +105,7 @@ abstract class IndicatorNotifier extends ChangeNotifier {
     }
   }
 
-  FrictionFactor get frictionFactor1 => _physics.frictionFactor;
+  FrictionFactor get frictionFactor => _physics.frictionFactor;
 
   double get secondaryDimension =>
       indicator.secondaryDimension ?? _position.viewportDimension;
@@ -132,7 +132,7 @@ abstract class IndicatorNotifier extends ChangeNotifier {
   /// The final trigger offset is [triggerOffset] + [safeOffset]
   double? safeOffset1;
 
-  double get safeOffset => safeArea ? safeOffset ?? 0 : 0;
+  double get safeOffset => safeArea ? safeOffset1 ?? 0 : 0;
 
   /// Overscroll offset.
   double _offset = 0;
