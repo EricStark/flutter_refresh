@@ -48,7 +48,7 @@ class _ClassicPageState extends State<ClassicPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Classic'.tr),
+        title: Text('Joma'.tr),
       ),
       body: EasyRefresh(
         controller: _controller,

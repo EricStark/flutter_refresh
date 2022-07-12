@@ -14,7 +14,7 @@ class SkeletonItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final themeData = Theme.of(context);
     final backgroundColor = themeData.colorScheme.surfaceVariant;
-    final foregroundColor = themeData.colorScheme.surface;
+    final foregroundColor = themeData.colorScheme.background;
     if (direction == Axis.vertical) {
       return Card(
         elevation: 0,
@@ -25,6 +25,7 @@ class SkeletonItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
+                child: Text("这里可以放图片"),
                 margin: const EdgeInsets.only(right: 16),
                 height: 80,
                 width: 80,
@@ -35,8 +36,9 @@ class SkeletonItem extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
+                      child: Text("joma"),
                       margin: const EdgeInsets.only(top: 8, right: 24),
-                      height: 12,
+                      height: 15,
                       width: double.infinity,
                       constraints: const BoxConstraints(
                         maxWidth: 200,
@@ -44,14 +46,16 @@ class SkeletonItem extends StatelessWidget {
                       color: foregroundColor,
                     ),
                     Container(
+                      child: Text("introduction"),
                       margin: const EdgeInsets.only(top: 16),
-                      height: 12,
+                      height: 15,
                       width: 80,
                       color: foregroundColor,
                     ),
                     Container(
+                      child: Text("introduction"),
                       margin: const EdgeInsets.only(top: 8),
-                      height: 12,
+                      height: 15,
                       width: 80,
                       color: foregroundColor,
                     ),
