@@ -336,11 +336,11 @@ class ClassicIndicatorState extends State<ClassicIndicator>
       reverseDuration: const Duration(milliseconds: 200),
       transitionBuilder: (child, animation) {
         return FadeTransition(
-          child: ScaleTransition(
-            child: child,
-            scale: animation,
-          ),
           opacity: animation,
+          child: ScaleTransition(
+            scale: animation,
+            child: child,
+          ),
         );
       },
       child: IconTheme.merge(data: iconTheme, child: icon),
