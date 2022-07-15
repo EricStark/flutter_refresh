@@ -344,7 +344,7 @@ abstract class IndicatorNotifier extends ChangeNotifier {
     if (indicator != null) {
       indicator.listenable?.unbind();
       indicator.listenable?.bind(this);
-      indicator = indicator;
+      this.indicator = indicator;
     }
     _noMoreProcess = noMoreProcess ?? _noMoreProcess;
     _task = task;
@@ -462,7 +462,7 @@ abstract class IndicatorNotifier extends ChangeNotifier {
     // Record old state.
     final oldOffset = _offset;
     final oldMode = _mode;
-    // Calculate and update the offset.
+    /// 计算偏移
     _offset = calculateOffset(position, value);
     slightDeviation();
     if (bySimulation) {

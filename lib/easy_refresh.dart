@@ -304,6 +304,7 @@ class EasyRefreshState extends State<EasyRefresh>
   void didUpdateWidget(covariant EasyRefresh oldWidget) {
     super.didUpdateWidget(oldWidget);
     // Update header and footer.
+    print('***************${header.clamping}');
     headerNotifier.update(
       indicator: header,
       noMoreProcess: widget.noMoreRefresh,

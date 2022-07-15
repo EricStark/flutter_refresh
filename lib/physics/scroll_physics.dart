@@ -196,7 +196,7 @@ class ERScrollPhysics extends BouncingScrollPhysics {
         bounds = value - position.pixels;
       } else if (value < position.minScrollExtent &&
           position.minScrollExtent < position.pixels) {
-        // hit top edge
+        /// 滑动到了边界位置，调用更新偏移量
         _updateIndicatorOffset(position, 0);
         return value - position.minScrollExtent;
       } else if (headerNotifier.offset > 0 &&
@@ -346,10 +346,11 @@ class ERScrollPhysics extends BouncingScrollPhysics {
     return bounds;
   }
 
-  // Update indicator offset
+  /// 更新偏移量，调用notifier的更新偏移方法
   void _updateIndicatorOffset(ScrollMetrics position, double value) {
     final hClamping = headerNotifier.clamping && headerNotifier.offset > 0;
     final fClamping = footerNotifier.clamping && footerNotifier.offset > 0;
+    /// 控制折叠效果clamping
     headerNotifier.updateOffset(position, fClamping ? 0 : value, false);
     footerNotifier.updateOffset(position, hClamping ? 0 : value, false);
   }
